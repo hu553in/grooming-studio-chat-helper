@@ -1,0 +1,44 @@
+[project]
+name = "grooming-studio-chat-helper"
+version = "0.1.0"
+description = "Telegram bot for the grooming studio business."
+requires-python = ">=3.14"
+
+dependencies = ["python-telegram-bot>=22.8"]
+
+[dependency-groups]
+dev = ["deptry>=0.25.1", "prek>=0.4.5", "pysentry-rs>=0.4.6", "ruff>=0.15.17", "ty>=0.0.49"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ARG", "PL", "RUF"]
+extend-ignore = ["RUF001"]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+
+[tool.pysentry.defaults]
+fail_on = "low"
+
+[tool.pysentry.sources]
+enabled = ["pypa", "pypi", "osv"]
+
+[tool.deptry]
+known_first_party = ["bot"]
+
+[tool.vulture]
+paths = ["bot.py"]
+min_confidence = 100
+sort_by_size = true
+
+[tool.bandit.assert_used]
+skips = ["*_test.py", "*test_*.py"]
