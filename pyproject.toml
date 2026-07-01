@@ -1,7 +1,7 @@
 [project]
 name = "grooming-studio-chat-helper"
 version = "0.1.0"
-description = "Telegram bot for the grooming studio business."
+description = "Telegram bot with reusable message templates for a grooming studio."
 requires-python = ">=3.14"
 
 dependencies = ["python-telegram-bot>=22.8"]
