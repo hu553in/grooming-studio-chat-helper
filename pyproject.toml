@@ -7,7 +7,7 @@ requires-python = ">=3.14"
 dependencies = ["python-telegram-bot>=22.8"]
 
 [dependency-groups]
-dev = ["deptry>=0.25.1", "prek>=0.4.6", "pysentry-rs>=0.4.7", "ruff>=0.15.20", "ty>=0.0.55"]
+dev = ["deptry>=0.25.1", "prek>=0.4.8", "pysentry-rs>=0.4.7", "ruff>=0.15.20", "ty>=0.0.56"]
 
 [tool.uv]
 default-groups = ["dev"]
