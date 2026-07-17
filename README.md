@@ -14,6 +14,7 @@ Telegram bot with reusable message templates for a grooming studio.
 
 - Python 3.14+
 - `uv`
+- Bun for repository tooling
 - Telegram bot token
 - Optional: Docker for deployment
 
@@ -30,6 +31,9 @@ Docker image:
 ```bash
 docker build -t grooming-studio-chat-helper .
 ```
+
+CI publishes `ghcr.io/hu553in/grooming-studio-chat-helper`; `latest` follows `main`, while `sha-*`
+tags are immutable.
 
 ## Configuration
 
@@ -62,12 +66,19 @@ docker run --rm -e TELEGRAM_BOT_TOKEN=123456:replace-me grooming-studio-chat-hel
 
 ```bash
 make install-deps
+uv run prek install
 make check
+make check-fix
 ```
 
 Focused checks:
 
 ```bash
 make lint
+make lint-fix
 make check-types
+make check-deps
+make check-vulns
+make check-unused
+make check-security
 ```
