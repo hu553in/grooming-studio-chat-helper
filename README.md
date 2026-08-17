@@ -12,7 +12,7 @@ Telegram bot with reusable message templates for a grooming studio.
 
 ## Requirements
 
-- Python 3.14+
+- Python
 - `uv`
 - Bun for repository tooling
 - Telegram bot token
